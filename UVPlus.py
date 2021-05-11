@@ -38,7 +38,7 @@ if __name__ == "__main__":
     file = open(sys.argv[1], "rb")
     filename = os.path.splitext(os.path.basename(file.name))[0]
     wadType = file.read(4)
-    if wadType != b'PWAD' || wadType != b'IWAD':
+    if wadType != b'PWAD' or wadType != b'IWAD':
         print("Selected file is not a Doom wad!")
         input("Press any key to exit")
         quit()
