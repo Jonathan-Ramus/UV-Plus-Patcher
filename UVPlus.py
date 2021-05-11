@@ -59,7 +59,7 @@ if __name__ == "__main__":
     for lump in lumps:
         file.seek(int.from_bytes(lump[:4], "little"))
         data = file.read(int.from_bytes(lump[4:8], "little"))
-        if lump[-8:].decode("ascii") == "THINGS":
+        if re.search("THINGS", lump[-8:].decode("ascii")):
             byteArr = list(data)
             for i in range(8, len(byteArr), 10):
                 byteArr[i] &= 0xef #Uncheck co-op flag
