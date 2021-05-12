@@ -40,7 +40,7 @@ if __name__ == "__main__":
     wadType = file.read(4)
     if wadType != b'PWAD' and wadType != b'IWAD':
         print("Selected file is not a Doom wad!")
-        input("Press any key to exit")
+        input("Press ENTER to exit")
         quit()
     
     #Get location, size, and name of relevant lumps
